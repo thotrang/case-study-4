@@ -1,0 +1,24 @@
+role 1 user 2 admin 3 seller 
+user
+ 
+    login
+    register
+
+product 
+
+category
+
+cart
+
+    item
+
+store
+
+order
+
+order_detail
+
+discount
+
+
+
