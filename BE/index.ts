@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
 
-mongoose.connect(`mongoodb://localhost:27017/case_study_4`)
+mongoose.connect(`mongodb://localhost:27017/case_study_4`)
     .then(() => {
         console.log('connect success');
     }).catch((err) => {
