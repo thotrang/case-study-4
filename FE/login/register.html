@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    function register() {
+      let name = $('#name').val();
+      let avatar = $('#avatar').val();
+      let username = $('username').val();
+      let password = $('password').val();
+
+      let user = {
+        name: name,
+        avatar: avatar,
+        username: username,
+        password: password
+      }
+      $.ajax({
+        type: 'POST',
+        url: 'http://localhost:3000/register',
+        headers: {
+            'Content-Type':'application/json'
+        },
+        data: JSON.stringify(user),
+        success: function () {
+          $('username').val('');
+          $('#password').val('');
+          $('#name').val('');
+          $('#avatar').val('');
+          Swal.fire(
+                    'Register!',
+                    'Register success!',
+                    'success'
+                ).then(result => {
+                    if (result.isConfirmed){
+                        location.href = 'login.html'
+                    }
+                })
+             
+        }
+      })
+    }
+  </script>
+</body>
+
+</html>
